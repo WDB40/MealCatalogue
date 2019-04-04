@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert Vegetable</title>
+</head>
+<body>
+
+<form name="form" th:object="${newVegetable}" th:action="@{/insertVegetable}" method="POST">
+	<label>Name: <input name="name" size="20"></label><br>
+	<label>Preparation: <input name="preparation" size="30"></label><br>
+	<input name="submit" type="submit" value="Submit">
+</form>
+
+</body>
+</html>

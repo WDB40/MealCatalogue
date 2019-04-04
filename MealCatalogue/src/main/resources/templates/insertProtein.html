@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert Protein</title>
+</head>
+<body>
+
+<form name="form" th:object="${newProtein}" th:action="@{/insertProtein}" method="POST">
+	<label>Name: <input name="name" size="20"></label><br>
+	<label>Weight: <input name="weight" size="10"></label><br>
+	<input name="submit" type="submit" value="Submit">
+</form>
+
+</body>
+</html>

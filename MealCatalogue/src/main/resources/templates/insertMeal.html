@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert Meal</title>
+</head>
+<body>
+
+<form name="form" th:action="@{/insertMeal}" th:object="${newMeal}" method="POST">
+	
+	<label for="protein">Protein: </label>
+	<select id="protein" name="protien">
+		<option th:each="currentProtein : ${proteins}" th:value="${currentProtein}" th:text="${currentProtein.name}"></option>
+	</select>
+	
+	<br>
+	
+	<label for="vegetable">Vegetable: </label>
+	<select id="vegetable" name="vegetable">
+		<option th:each="currentVegetable : ${vegetables}" th:value="${currentVegetable}" th:text="${currentVegetable.name}"></option>
+	</select>
+	
+	<br>
+	
+	<label for="side">Side: </label>
+	<select id="side" name="side">
+		<option th:each="currentSide : ${sides}" th:value="${currentSide}" th:text="${currentSide.name}"></option>
+	</select>
+	
+	<input name="submit" type="submit" value="Submit">
+	
+</form>
+
+</body>
+</html>

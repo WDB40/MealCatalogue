@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>Meal</h1>
+
+
+<h1>Protein</h1>
+<table>
+	<tr>
+		<th>ID</th>
+		<th>NAME</th>
+		<th>WEIGHT</th>
+	</tr>
+	<tr th:each="currentProtein : ${proteins}">
+		<td th:text="${currentProtein.id}"></td>
+		<td th:text="${currentProtein.name}"></td>
+		<td th:text="${currentProtein.weight}"></td>
+		<td><a th:href="@{/deleteProtein/{id}(id=${currentProtein.id})}">DELETE</a></td>
+		<td><a th:href="@{/editProtein/{id}(id=${currentProtein.id})}">EDIT</a></td>
+	</tr>
+</table>
+
+<br>
+
+<h1>Vegetable</h1>
+<table>
+	<tr>
+		<th>ID</th>
+		<th>NAME</th>
+		<th>PREPARATION</th>
+	</tr>
+	
+	<tr th:each="currentVegetable : ${vegetables}">
+		<td th:text="${currentVegetable.id}"></td>
+		<td th:text="${currentVegetable.name}"></td>
+		<td th:text="${currentVegetable.preparation}"></td>
+		<td><a th:href="@{/deleteVegetable/{id}(id=${currentVegetable.id})}">DELETE</a></td>
+	</tr>
+</table>
+<br>
+
+<h1>Side</h1>
+<table>
+	<tr>
+		<th>ID</th>
+		<th>NAME</th>
+		<th>TYPE</th>
+	</tr>
+	
+	<tr th:each="currentSide : ${sides}">
+		<td th:text="${currentSide.id}"></td>
+		<td th:text="${currentSide.name}"></td>
+		<td th:text="${currentSide.type}"></td>
+		<td><a th:href="@{/deleteSide/{id}(id=${currentSide.id})}">DELETE</a></td>
+	</tr>
+</table>
+
+<br>
+
+<a href="/index.html">Home</a>
+</body>
+</html>

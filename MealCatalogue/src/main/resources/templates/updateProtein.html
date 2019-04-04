@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Protein</title>
+</head>
+<body>
+
+<form action="" th:action="@{/updateProtein/{id}(id=${protein.id})}" th:object="${protein}" method="POST">
+	
+	<label for="name">Name: </label>
+	<input type="text" th:field="*{name}" id="name" placeholder="Name">
+	<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+	<br>
+	
+	<label for="weight">Weight: </label>
+	<input type="text" th:field="*{weight}" id="weight" placeholder="Weight">
+	<span th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}"></span>
+	<br>
+
+	<input type="submit" value="Update Protein">
+
+</form>
+
+</body>
+</html>
